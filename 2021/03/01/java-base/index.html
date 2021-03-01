@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java-Spring入门（二）, Hui3c 窝">
+    <meta name="keywords" content="Java 基本类型与面向对象, Hui3c 窝">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java-Spring入门（二） | Hui3c 窝</title>
+    <title>Java 基本类型与面向对象 | Hui3c 窝</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -240,12 +240,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java-Spring入门（二）</h1>
+                    <h1 class="description center-align post-title">Java 基本类型与面向对象</h1>
                 </div>
             </div>
         </div>
@@ -361,12 +361,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/java/">
-                                <span class="chip bg-color">java</span>
+                            <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">基础</span>
                             </a>
                         
-                            <a href="/tags/spring/">
-                                <span class="chip bg-color">spring</span>
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
                             </a>
                         
                     </div>
@@ -390,7 +390,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-26
+                    2021-03-01
                 </div>
                 
 
@@ -404,7 +404,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    260
+                    1.7k
                 </div>
                 
 
@@ -424,54 +424,250 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>建议先看<a href="/2021/02/26/java-spring1/">Java-Spring入门（上）篇</a></p>
-<h2 id="使用注解开发"><a href="#使用注解开发" class="headerlink" title="使用注解开发"></a>使用注解开发</h2><p>Spring4后，需要保证aop的包导入，不然不支持context约束</p>
-<img src="/2021/02/26/java-spring2/image-20210301104742792.png" class="" title="要含aop的包">
+                <h2 id="基本数据类型和引用数据类型"><a href="#基本数据类型和引用数据类型" class="headerlink" title="基本数据类型和引用数据类型"></a>基本数据类型和引用数据类型</h2><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>Java中有<strong>八种基本数据类型</strong>，都是Java语言预先定义好的，并且是关键字。</p>
+<p>这八种基本类型分别是：</p>
+<ul>
+<li>整型 （4种）<code>byte</code>，<code>short</code>，<code>int</code>，<code>long</code></li>
+<li>字符型 （1种）<code>char</code></li>
+<li>浮点型 （2种）<code>float</code>，<code>double</code></li>
+<li>布尔型（1种）<code>boolean</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">No.</th>
+<th align="center">数据类型</th>
+<th align="center">大小/位</th>
+<th align="center">可表示数据范围</th>
+<th align="center">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center"><code>byte</code>（字节型）</td>
+<td align="center">8</td>
+<td align="center">-128~127</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center"><code>short</code>（短整型）</td>
+<td align="center">16</td>
+<td align="center">-32768~32767</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center"><code>int</code>（整型）</td>
+<td align="center">32</td>
+<td align="center">-2147483648~2147483647</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center"><code>long</code>（长整型）</td>
+<td align="center">64</td>
+<td align="center">-9223372036854775808~9223372036854775807</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center"><code>float</code>（单精度）</td>
+<td align="center">32</td>
+<td align="center">-3.4E38~3.4E38</td>
+<td align="center">0.0</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center"><code>double</code>（双精度）</td>
+<td align="center">64</td>
+<td align="center">-1.7E308~1.7E308</td>
+<td align="center">0.0</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center"><code>char</code>（字符）</td>
+<td align="center">16</td>
+<td align="center">0~255</td>
+<td align="center">‘\u0000’</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center"><code>boolean</code>（布尔）</td>
+<td align="center">-</td>
+<td align="center">true或false</td>
+<td align="center">false</td>
+</tr>
+</tbody></table>
+<h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><p>包括有：类、 接口类型、 数组类型、 枚举类型、 注解类型、 字符串型</p>
+<p><code>String</code> 类型就是<strong>引用类型</strong></p>
+<h3 id="基本、引用-区别"><a href="#基本、引用-区别" class="headerlink" title="基本、引用 区别"></a>基本、引用 区别</h3><ul>
+<li>基本变量类型<ul>
+<li>在方法中定义的<strong>非全局</strong><code>基本数据类型</code>变量的具体内容是<strong>存储在栈中</strong>的</li>
+</ul>
+</li>
+</ul>
+<img src="/2021/03/01/java-base/image-20210301185653429.png" class="" title="数据在栈和堆中">
 
-<p>导入注解的支持：（初始化）</p>
-<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">xmlns:</span>context</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/context<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
-        https://www.springframework.org/schema/context/spring-context.xsd<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">context:</span>annotation-config</span> <span class="token punctuation">/&gt;</span></span>
-   
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> msg <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// 在将msg给fun方法时，开辟为temp开辟新的内存空间</span>
+    <span class="token function">fun</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token keyword">int</span> temp<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    temp <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// 结束调用时释放temp开辟的内存</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="/2021/03/01/java-base/image-20210301190301584.png" class="" title="栈中状态">
 
+<ul>
+<li>引用变量类型<ul>
+<li>只要是<code>引用数据类型</code>变量，其<strong>具体内容</strong>都是存放在<strong>堆</strong>中的，而<strong>栈中</strong>存放的是其<strong>具体内容</strong>所在<strong>内存的地址</strong></li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 1 初态时，初始化book 类型</span>
+    <span class="token class-name">Book</span> book <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Book</span><span class="token punctuation">(</span><span class="token string">"Java开发指南"</span><span class="token punctuation">,</span><span class="token number">66.6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// 2 调用方法：调用时开辟新的temp栈，指向原有引用变量栈堆</span>
+    <span class="token function">fun</span><span class="token punctuation">(</span>book<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-<h3 id="1-1、组件注解"><a href="#1-1、组件注解" class="headerlink" title="1.1、组件注解"></a>1.1、组件注解</h3><p>详见<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-autowired-annotation-primary">手册</a>，1.9.8 </p>
-<ol>
-<li>使用 @Component 标注类为<strong>组件</strong></li>
-</ol>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hui<span class="token punctuation">.</span>dao</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token class-name">Book</span> temp<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 3 设置值</span>
+    temp<span class="token punctuation">.</span><span class="token function">setPrice</span><span class="token punctuation">(</span><span class="token number">99.9</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 4 结束时释放引用数据类型temp</span>
+<span class="token punctuation">}</span>
 
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span></span><span class="token class-name">Component</span><span class="token punctuation">;</span>
-<span class="token comment">// 等于&lt;bean id="user" class="com.hui.pojo.User" /&gt;</span>
-<span class="token comment">// id默认为类名小写</span>
+<span class="token keyword">class</span> <span class="token class-name">Book</span><span class="token punctuation">{</span>
+    <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> price<span class="token punctuation">;</span>
 
-<span class="token annotation punctuation">@Component</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token class-name">String</span> name <span class="token operator">=</span> <span class="token string">"Hui3c"</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ol start="2">
-<li>在配置文件（<u>配置文件名规范为:applicationContext.xml</u>）中导入</li>
-</ol>
-<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token comment">&lt;!--自动加载com.hui.dao下所有的模板--&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">context:</span>component-scan</span> <span class="token attr-name">base-package</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.hui.dao<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<ol start="3">
-<li>运行</li>
-</ol>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Text31</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token class-name">ApplicationContext</span> context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">Book</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span><span class="token keyword">double</span> price<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">=</span> price<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setPrice</span><span class="token punctuation">(</span><span class="token keyword">double</span> price<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">=</span> price<span class="token punctuation">;</span>
         
-        <span class="token comment">// Beanid 默认为类的小写</span>
-        <span class="token class-name">User</span> user <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">,</span> <span class="token class-name">User</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="/2021/03/01/java-base/image-20210301190926957.png" class="" title="引用类型在堆栈中的位置">
+
+<p>三种常见的引用时变量赋值：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"myString"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> s2 <span class="token operator">=</span> <span class="token string">"myString"</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> s3 <span class="token operator">=</span> <span class="token string">"my"</span> <span class="token operator">+</span> <span class="token string">"String"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>第一种：new</p>
+<ul>
+<li><p>在程序编译期，编译程序先去字符串常量池检查，是否存在“myString”,如果不存在，则在常量池中开辟一个内存空间存放“myString”；</p>
+</li>
+<li><p>（new 时，毫无疑问会在堆中分配内存，创建一个String类对象。s1这个在栈中引用指向是队中的String对象）</p>
+</li>
+<li><p>如果存在的话，则不用重新开辟空间，保证常量池中只有一个“myString”常量，节省内存空间，就只需要创建一个堆中的String对象。</p>
+</li>
+<li><p>然后在内存堆中开辟一块空间存放new出来的String实例，在栈中开辟一块空间，命名为“s1”，存放的值为堆中String实例的内存地址，这个<strong>过程</strong>就是将引用<strong>s1指向new出来的String实例</strong></p>
+</li>
+</ul>
+<img src="/2021/03/01/java-base/image-20210301205908883.png" class="" title="引用时变量赋值">
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      
+<span class="token class-name">String</span> s2 <span class="token operator">=</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> s3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1 <span class="token operator">==</span> s2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false 比较两个引用地址 （s2-&gt; 常量池地址） （s1 -&gt; String对象地址）</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true  equals()比较字符串的内容</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1 <span class="token operator">==</span> s3<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//false       每个String 对象都不是不同的，引用地址也不同</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p>第二种：直接定义</p>
+<ul>
+<li><p>在程序编译期，编译程序先去字符串常量池检查，是否存在“myString”，</p>
+</li>
+<li><p>如果不存在，则在常量池中开辟一个内存空间存放“myString”；如果存在的话，则不用重新开辟空间。</p>
+</li>
+<li><p>然后在栈中开辟一块空间，命名为“s1”，存放的值为常量池中“myString”的内存地址</p>
+</li>
+</ul>
+<img src="/2021/03/01/java-base/image-20210301211645206.png" class="" title="赋值定义">
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> str1 <span class="token operator">=</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> str2 <span class="token operator">=</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str1 <span class="token operator">==</span> str2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 返回true</span>
+<span class="token comment">// 因为 == 是判断地址位置。str1没发现hello</span>
+<span class="token comment">// 会先到常量池中检查是否有“hello”的存在，发现是没有的，于是在常量池中创建“hello”对象，并将常量池中的引用赋值给str1</span>
+<span class="token comment">// 第二个字面量 String str2 = "hello"，在常量池中检测到该对象了，直接将引用赋值给str2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>第三种：使用+号连接</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> s1 <span class="token operator">=</span> <span class="token string">"a"</span> <span class="token operator">+</span> <span class="token string">"b"</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> s2 <span class="token operator">=</span> <span class="token string">"ab"</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">,</span><span class="token function">println</span><span class="token punctuation">(</span>s1 <span class="token operator">==</span> s2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true  ,s1 和 s2 地址是一样的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>具体的原理我目前并没有理解透彻，推荐去看《thinking in Java》</p>
+<h4 id="String的intern-方法"><a href="#String的intern-方法" class="headerlink" title="String的intern()方法"></a>String的intern()方法</h4><blockquote>
+<p>转载至《thinking in java》</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sureyonder/article/details/5569366">https://blog.csdn.net/sureyonder/article/details/5569366</a></p>
+<p>如果字符串常量池中已经包含一个等于此String对象的字符串，则返回代表池中这个字符串的String对象；否则，将此String对象包含的字符添加到常量池中，并返回此String对象的引用</p>
+<p>String类的intern()方法可以截留字符串，如果String对象包含的字符序列不在字符串常量内部列表中，那么就把这个String对象包含的字符序列和String对象的引用作为名值对保存到内部列表中，最后intern()返回一个指向String对象本身的引用；如果 String对象包含的字符序列在字符串常量内部列表中，那么就返回列表的名值对中的对应的字符串对象引用，而String对象本身的就会被丢弃</p>
+<p>intern()方法在不同的jdk中有不同的作用分为1.6前和1.7后</p>
+</blockquote>
+<h4 id="String（简单版。233）"><a href="#String（简单版。233）" class="headerlink" title="String（简单版。233）"></a>String（简单版。233）</h4><ul>
+<li>String类型其实<strong>并不是基本类型</strong>，一旦创建就不能够被改变</li>
+<li>String类使用了final修饰符，<strong>不能被继承</strong></li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// String类的成员变量定义，不可变</span>
+<span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">char</span> value<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>             
+<span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">int</span> count<span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h3><h4 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h4><ul>
+<li>char类型用于存放一个字符，值用单引号’表示 (双引号表示字符串)</li>
+<li>其长度和short一样，也是16位的</li>
+</ul>
+<h4 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h4><ul>
+<li>float 长度为32位</li>
+<li>double 长度为64位</li>
+<li>默认情况下：定义小浮点型都是使用<strong>double</strong>类型</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">double</span> d <span class="token operator">=</span> <span class="token number">123.45</span><span class="token punctuation">;</span>
+        
+<span class="token comment">// 出现编译错误，因为54.321超过32位，需要转换为double</span>
+<span class="token keyword">float</span> f <span class="token operator">=</span> <span class="token number">54.321</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 往数值后面加f，声明为float</span>
+<span class="token keyword">float</span> f2 <span class="token operator">=</span> <span class="token number">54.321f</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="字面值"><a href="#字面值" class="headerlink" title="字面值"></a>字面值</h4><p>给基本类型的变量赋值的方式叫做 <strong>字面值</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 例如</span>
+<span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">float</span> fl <span class="token operator">=</span> <span class="token number">23.1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 整形字面型</span>
+<span class="token keyword">long</span> val <span class="token operator">=</span> <span class="token number">26L</span><span class="token punctuation">;</span> <span class="token comment">//以L结尾的字面值表示long型</span>
+<span class="token keyword">int</span> decVal <span class="token operator">=</span> <span class="token number">26</span><span class="token punctuation">;</span> <span class="token comment">//默认就是int型</span>
+<span class="token keyword">int</span> hexVal <span class="token operator">=</span> <span class="token number">0x1a</span><span class="token punctuation">;</span> <span class="token comment">//16进制</span>
+<span class="token keyword">int</span> oxVal <span class="token operator">=</span> <span class="token number">032</span><span class="token punctuation">;</span> <span class="token comment">//8进制</span>
+<span class="token keyword">int</span> binVal <span class="token operator">=</span> <span class="token number">0b11010</span><span class="token punctuation">;</span> <span class="token comment">//2进制</span>
+
+<span class="token comment">// 浮点数字面值顶折</span>
+<span class="token keyword">float</span> f1 <span class="token operator">=</span> <span class="token number">123.4F</span><span class="token punctuation">;</span><span class="token comment">// 以F结尾的字面值表示float类型</span>
+<span class="token keyword">double</span> d1 <span class="token operator">=</span> <span class="token number">123.4</span><span class="token punctuation">;</span><span class="token comment">// 默认就是double类型</span>
+<span class="token keyword">double</span> d2 <span class="token operator">=</span> <span class="token number">1.234e2</span><span class="token punctuation">;</span><span class="token comment">// 科学计数法表示double</span>
+
+<span class="token comment">// 字符型和转义</span>
+<span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token string">"这是字符串"</span>
+<span class="token keyword">char</span> newLine <span class="token operator">=</span> <span class="token string">'\n'</span><span class="token punctuation">;</span> <span class="token comment">//换行</span>
+<span class="token keyword">char</span> doubleQuote <span class="token operator">=</span> <span class="token string">'\"'</span><span class="token punctuation">;</span> <span class="token comment">//双引号</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>易错点：</p>
+<p><strong>byte b = 200</strong> 会报错</p>
+<p>解：byte一共八个bit位，最高位表示正负，所以范围是-128~127</p>
+</blockquote>
+<h4 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h4><p>不同类型之间的数据可以互相转换，</p>
 
                 
             </div>
@@ -498,7 +694,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hui3c.club/2021/02/26/java-spring2/">https://hui3c.club/2021/02/26/java-spring2/</a>
+                    <a href="https://hui3c.club/2021/03/01/java-base/">https://hui3c.club/2021/03/01/java-base/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -536,12 +732,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/java/">
-                                    <span class="chip bg-color">java</span>
+                                <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">基础</span>
                                 </a>
                             
-                                <a href="/tags/spring/">
-                                    <span class="chip bg-color">spring</span>
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
                                 </a>
                             
                         </div>
@@ -587,9 +783,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/03/01/java-base/">
                     <div class="card-image">
@@ -607,9 +804,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -622,6 +819,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -644,13 +842,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/26/java-spring1/">
+                <a href="/2021/02/26/java-spring2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Java-Spring入门（一）">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Java-Spring入门（二）">
                         
-                        <span class="card-title">Java-Spring入门（一）</span>
+                        <span class="card-title">Java-Spring入门（二）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
