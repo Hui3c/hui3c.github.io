@@ -397,14 +397,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-01
+                    2021-03-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.1k
+                    5.6k
                 </div>
                 
 
@@ -1201,7 +1201,7 @@ xmlns:c="http://www.springframework.org/schema/c"
 <li>单例模式</li>
 </ol>
 <p>默认情况下是“单例”，不加就是默认</p>
-<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>User<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.hui.pojo.User<span class="token punctuation">"</span></span>  <span class="token attr-name">scope</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sigleton<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>User<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.hui.pojo.User<span class="token punctuation">"</span></span>  <span class="token attr-name">scope</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>singleton<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ol start="2">
 <li>原型模式(多线程使用)</li>
 </ol>
@@ -1353,7 +1353,10 @@ xmlns:c="http://www.springframework.org/schema/c"
     <span class="token keyword">this</span><span class="token punctuation">.</span>cat <span class="token operator">=</span> cat<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>但<strong>类型必须相同</strong>，不能说把把“狗”引用给“猫”</p>
+<p>但<strong>类型必须相同</strong>，不能说把把“狗”引用给“猫”。<code>@Autowired</code>和<code>@Qualifier </code> 是一套</p>
+<blockquote>
+<p>如果字段使用了 <code>@Nullable</code> 标记注解，说明这个字段可以为<code>null</code></p>
+</blockquote>
 <h4 id="6-4-8、注解模式-Resource"><a href="#6-4-8、注解模式-Resource" class="headerlink" title="6.4.8、注解模式 @Resource"></a>6.4.8、注解模式 <u>@Resource</u></h4><p>这个注解器是<strong>java自带的</strong>。继承了上面两个注解器的功能，但没有idea右边的那个叶子提示</p>
 <p>不加参数情况下，先找name，再找类型。如果name 与 <u>类名小写</u> 不符，且类型重复则会抛出报错</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Resource</span>
@@ -1368,6 +1371,74 @@ xmlns:c="http://www.springframework.org/schema/c"
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setCat</span><span class="token punctuation">(</span><span class="token class-name">Cat</span> cat<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>cat <span class="token operator">=</span> cat<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-4-9、-Autowired-比较-Resource"><a href="#6-4-9、-Autowired-比较-Resource" class="headerlink" title="6.4.9、@Autowired 比较 @Resource"></a>6.4.9、@Autowired 比较 @Resource</h4><ul>
+<li>可用于自动装配</li>
+<li>@Autowired 通过<code>byname</code>方式实现，要求对象存在</li>
+<li>@Resource  ，先通过<code>byname</code>实现，找不到在通过<code>byType</code>实现</li>
+</ul>
+<h3 id="6-5、使用注解开发"><a href="#6-5、使用注解开发" class="headerlink" title="6.5、使用注解开发"></a>6.5、使用注解开发</h3><p>Spring4后，需要保证aop的包导入，不然不支持context约束</p>
+<img src="/2021/02/26/java-spring1/image-20210301104742792.png" class="" title="要含aop的包">
+
+<p>导入注解的支持：（初始化）</p>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">xmlns:</span>context</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/context<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">context:</span>annotation-config</span> <span class="token punctuation">/&gt;</span></span>
+   
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-5-1、组件注解"><a href="#6-5-1、组件注解" class="headerlink" title="6.5.1、组件注解"></a>6.5.1、组件注解</h4><p>详见<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-autowired-annotation-primary">手册</a>，1.9.8 </p>
+<ol>
+<li>使用 <code>@Component</code> 标注类为<strong>组件</strong>，使用<code>@Value</code>设置值</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hui<span class="token punctuation">.</span>dao</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span></span><span class="token class-name">Component</span><span class="token punctuation">;</span>
+<span class="token comment">// 等于&lt;bean id="user" class="com.hui.pojo.User" /&gt;</span>
+<span class="token comment">// id默认为类名小写</span>
+
+<span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"Hui3c"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>在配置文件（<u>配置文件名规范为:applicationContext.xml</u>）中导入</li>
+</ol>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token comment">&lt;!--自动加载com.hui.dao下所有的模板--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">context:</span>component-scan</span> <span class="token attr-name">base-package</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.hui.dao<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>运行</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Text31</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">ApplicationContext</span> context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// Beanid 默认为类的小写</span>
+        <span class="token class-name">User</span> user <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">,</span> <span class="token class-name">User</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p> <code>@Component</code> 组件在web开发中有几个衍生的注解，类似<code>alias</code>，功能都一样</p>
+<ul>
+<li>在dao层使用 <code>@Respsitory</code></li>
+<li>在service层使用 <code>@Service</code></li>
+<li>在controller 使用 <code>@Controller</code></li>
+</ul>
+<h4 id="6-5-2、在开发中的建议"><a href="#6-5-2、在开发中的建议" class="headerlink" title="6.5.2、在开发中的建议"></a>6.5.2、在开发中的建议</h4><ul>
+<li><p>xml：更加万能，适用于任何场景，维护简单方便</p>
+</li>
+<li><p>注解：不是自己类使用不了，维护复杂</p>
+</li>
+<li><p>xml用来管理bean</p>
+</li>
+<li><p>注解只负责完成属性的注入</p>
+</li>
+</ul>
 <h2 id="其他问题（坑）-技巧"><a href="#其他问题（坑）-技巧" class="headerlink" title="其他问题（坑）/技巧"></a>其他问题（坑）/技巧</h2><h3 id="找不到配置文件"><a href="#找不到配置文件" class="headerlink" title="找不到配置文件"></a>找不到配置文件</h3><p>找不到配置文件，或者资源文件夹被手贱删除</p>
 <blockquote>
 <p>class path resource [.xml] cannot be opened because it does not exist</p>
@@ -1510,7 +1581,7 @@ xmlns:c="http://www.springframework.org/schema/c"
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/02/26/java-spring2/">
+                <a href="/2021/02/28/java-spring2/">
                     <div class="card-image">
                         
                         
@@ -1527,7 +1598,7 @@ xmlns:c="http://www.springframework.org/schema/c"
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-26
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-28
                         </span>
                         <span class="publish-author">
                             
@@ -1747,7 +1818,7 @@ xmlns:c="http://www.springframework.org/schema/c"
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13k</span>&nbsp;字
+                class="white-color">16.1k</span>&nbsp;字
             
             
             
