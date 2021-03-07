@@ -397,14 +397,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-04
+                    2021-03-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    540
+                    1.3k
                 </div>
                 
 
@@ -432,7 +432,7 @@
 <li>部分大公司会采用此方案，需要知道这也是Spring配置中的一种</li>
 <li><code>String-Boot</code> 中 都是使用该方案，本篇作用为：<strong>Spring还有这种用法</strong></li>
 </ul>
-<h3 id="使用纯Java类来做"><a href="#使用纯Java类来做" class="headerlink" title="使用纯Java类来做"></a>使用纯Java类来做</h3><p>见<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-java">手册</a>1.12(.1)</p>
+<h3 id="1-1、使用纯Java类来做"><a href="#1-1、使用纯Java类来做" class="headerlink" title="1.1、使用纯Java类来做"></a>1.1、使用纯Java类来做</h3><p>见<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-java">手册</a>1.12(.1)</p>
 <ul>
 <li><p>方法1:在配置类中定义一个方法，并使用<code>@Bean</code>注解声明</p>
 </li>
@@ -521,7 +521,172 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h2><p>代理模式是SpringAOP的底层（SpringAOP 和 SpringMVC）</p>
-<p>分类：静态代理、动态代理</p>
+<p>分类：<code>静态代理</code>、<code>动态代理</code></p>
+<h3 id="2-1、静态代理"><a href="#2-1、静态代理" class="headerlink" title="2.1、静态代理"></a>2.1、静态代理</h3><p>角色：</p>
+<ul>
+<li><code>抽象角色</code>：使用接口或者抽象类来解决</li>
+<li><code>真实角色</code>：被代理的角色</li>
+<li><code>代理角色</code>：代理的真实角色，代理真实角色，会做以卸附属操作</li>
+<li><code>客户</code>：被代理对象的人（注意是被动）</li>
+</ul>
+<p>代理模式的好处：</p>
+<ul>
+<li>使<code>真实角色</code>的操作更加存粹！不用关注公共业务</li>
+<li>公共交给<code>代理角色</code>！实现了业务的分工！</li>
+<li>公共业务发生扩展的适合，方便集中管理！</li>
+</ul>
+<p>缺点（静态代理）：</p>
+<ul>
+<li>真实角色就会产生一个代理角色，代码翻倍（解决方法：动态代理）</li>
+</ul>
+<img src="/2021/02/28/java-spring2/image-20210307101154705.png" class="" title="实例：客户买房">
+
+<p>房东（<code>真实角色</code>）：只有出租房的需求 LandLord.class`</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hui<span class="token punctuation">.</span>demo</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LandLord</span> <span class="token keyword">implements</span> <span class="token class-name">Rent</span><span class="token punctuation">{</span>
+
+    <span class="token comment">// 真实角色</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">rent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"房东要出租房子！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>代理商（<code>代理角色</code>）：除了出租房需求，还有附属的操作：签合同，带你看房  <code>Proxy.class</code></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hui<span class="token punctuation">.</span>demo</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 代理角色也要租房子，</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Proxy</span> <span class="token keyword">implements</span> <span class="token class-name">Rent</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">LandLord</span> landLord<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span><span class="token class-name">LandLord</span> landLord<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>landLord <span class="token operator">=</span> landLord<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 代理要做的事情</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">rent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 通知房东即将出售</span>
+        landLord<span class="token punctuation">.</span><span class="token function">rent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 代理做的事情：签合同</span>
+        <span class="token function">hetong</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 代理做的事情：看房</span>
+        <span class="token function">seeHouse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 以下都是代理要做的事情</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span>  <span class="token function">seeHouse</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"看房"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">hetong</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"签署合同"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>“出租房”这个动作，用接口来表示  <code>Rent.interface</code></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hui<span class="token punctuation">.</span>demo</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 接口：租房</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Rent</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">rent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>你（<code>客户</code>）:除了租到房还能享受到其他的”特殊待遇”（比如中介费啥的） <code>Client.class</code></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hui<span class="token punctuation">.</span>demo</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Client</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">// 房东</span>
+        <span class="token class-name">LandLord</span> landLord <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LandLord</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        landLord<span class="token punctuation">.</span><span class="token function">rent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 通过代理来租房子</span>
+        <span class="token class-name">Proxy</span> proxy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>landLord<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        proxy<span class="token punctuation">.</span><span class="token function">rent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-2、AOP（静态代理）"><a href="#2-2、AOP（静态代理）" class="headerlink" title="2.2、AOP（静态代理）"></a>2.2、AOP（静态代理）</h3><img src="/2021/02/28/java-spring2/image-20210307110055568.png" class="" title="机制解释">
+
+<p>抽象角色：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hui<span class="token punctuation">.</span>demo2</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 抽象角色：增删改查</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">del</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>业务实现接口类：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hui<span class="token punctuation">.</span>demo2</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 实现Userservice接口，做一个真实对象</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">UserService</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"增加了!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">del</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"减少了!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"更新了!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"查询了!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>静态代理类：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hui<span class="token punctuation">.</span>demo2</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 也需要去实现抽象类</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceProxy</span> <span class="token keyword">implements</span> <span class="token class-name">UserService</span><span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">UserServiceImpl</span> userService<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setUserService</span><span class="token punctuation">(</span><span class="token class-name">UserServiceImpl</span> userService<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>userService <span class="token operator">=</span> userService<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"add"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        userService<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//... 省略其他三个</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">String</span> msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"使用了"</span> <span class="token operator">+</span> msg <span class="token operator">+</span> <span class="token string">"方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>客户使用：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hui<span class="token punctuation">.</span>demo2</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Client</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">UserServiceImpl</span> userService <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UserServiceImpl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">UserServiceProxy</span> proxy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UserServiceProxy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 代理谁</span>
+        proxy<span class="token punctuation">.</span><span class="token function">setUserService</span><span class="token punctuation">(</span>userService<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			
+        <span class="token comment">// 由代理访问</span>
+        proxy<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-3、动态代理（反射）"><a href="#2-3、动态代理（反射）" class="headerlink" title="2.3、动态代理（反射）"></a>2.3、动态代理（反射）</h3><ul>
+<li>动态代理于静态<code>代理角色</code>一样</li>
+<li>动态代理类是<strong>动态生成</strong>的</li>
+<li>分类：基于<code>interface</code>的动态代理，基于<code>class</code>的动态代理<ul>
+<li>基于接口：JDK动态代理</li>
+<li>基于类：<code>cglib</code></li>
+<li>java 字节码实现：<code>javasist</code></li>
+</ul>
+</li>
+</ul>
+<p>两个常见类：<code>Proxy</code>：代理 ，<code>InvocationHandler</code>：调用处理程序</p>
 
                 
             </div>
@@ -882,7 +1047,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">16.8k</span>&nbsp;字
+                class="white-color">18.9k</span>&nbsp;字
             
             
             
