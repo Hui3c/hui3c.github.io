@@ -397,14 +397,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-14
+                    2021-03-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.7k
+                    4.9k
                 </div>
                 
 
@@ -1139,6 +1139,38 @@ method：public final void java.lang.Object.wait(long,int) throws java.lang.Inte
 <span class="token punctuation">}</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="反射总结"><a href="#反射总结" class="headerlink" title="反射总结"></a>反射总结</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">通过<span class="token class-name">Class</span>对象：
+    
+<span class="token number">1.</span>批量的
+		<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Field<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getFields</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>获取所有的<span class="token string">"公有字段"</span>
+		<span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Field<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getDeclaredFields</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>获取所有字段，包括：私有、受保护、默认、公有；
+<span class="token number">2.</span>获取单个的：
+		<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">public</span> <span class="token class-name">Field</span> <span class="token function">getField</span><span class="token punctuation">(</span><span class="token class-name">String</span> fieldName<span class="token punctuation">)</span><span class="token operator">:</span>获取某个<span class="token string">"公有的"</span>字段；
+		<span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">public</span> <span class="token class-name">Field</span> <span class="token function">getDeclaredField</span><span class="token punctuation">(</span><span class="token class-name">String</span> fieldName<span class="token punctuation">)</span><span class="token operator">:</span>获取某个字段<span class="token punctuation">(</span>可以是私有的<span class="token punctuation">)</span>
+设置字段的值：
+		<span class="token class-name">Field</span> <span class="token operator">--</span><span class="token operator">&gt;</span> <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">set</span><span class="token punctuation">(</span><span class="token class-name">Object</span> obj<span class="token punctuation">,</span><span class="token class-name">Object</span> value<span class="token punctuation">)</span><span class="token operator">:</span>
+					参数说明：
+					<span class="token number">1.</span>obj<span class="token operator">:</span>要设置的字段所在的对象；
+					<span class="token number">2.</span>value<span class="token operator">:</span>要为字段设置的值；
+                                                              
+获取成员方法并调用：
+
+<span class="token number">1.</span>批量的：
+		<span class="token keyword">public</span> <span class="token class-name">Method</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getMethods</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>获取所有<span class="token string">"公有方法"</span>；（包含了父类的方法也包含<span class="token class-name">Object</span>类）
+		<span class="token keyword">public</span> <span class="token class-name">Method</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getDeclaredMethods</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>获取所有的成员方法，包括私有的<span class="token punctuation">(</span>不包括继承的<span class="token punctuation">)</span>
+<span class="token number">2.</span>获取单个的：
+		<span class="token keyword">public</span> <span class="token class-name">Method</span> <span class="token function">getMethod</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span><span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> parameterTypes<span class="token punctuation">)</span><span class="token operator">:</span>
+					参数：
+						name <span class="token operator">:</span> 方法名；
+						<span class="token class-name">Class</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token operator">:</span> 形参的<span class="token class-name">Class</span>类型对象
+		<span class="token keyword">public</span> <span class="token class-name">Method</span> <span class="token function">getDeclaredMethod</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span><span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> parameterTypes<span class="token punctuation">)</span>
+
+	 调用方法：
+		<span class="token class-name">Method</span> <span class="token operator">--</span><span class="token operator">&gt;</span> <span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">invoke</span><span class="token punctuation">(</span><span class="token class-name">Object</span> obj<span class="token punctuation">,</span><span class="token class-name">Object</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> args<span class="token punctuation">)</span><span class="token operator">:</span>
+					参数说明：
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 <h3 id="动态创建对象执行方法"><a href="#动态创建对象执行方法" class="headerlink" title="动态创建对象执行方法"></a>动态创建对象执行方法</h3><p>这里简写代码了，抛出用idea自带的抛出下</p>
 <h4 id="有参-无参-创建类的对象"><a href="#有参-无参-创建类的对象" class="headerlink" title="有参/无参 创建类的对象"></a>有参/无参 创建类的对象</h4><p><code>newInstance</code>：创建类的对象</p>
 <p><strong>无参构造</strong></p>
@@ -1758,7 +1790,7 @@ name<span class="token punctuation">.</span><span class="token function">set</sp
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">26.1k</span>&nbsp;字
+                class="white-color">32.3k</span>&nbsp;字
             
             
             
