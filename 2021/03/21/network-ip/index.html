@@ -1,0 +1,1049 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="计算机网络-IP协议, Hui3c 窝">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>计算机网络-IP协议 | Hui3c 窝</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Hui3c 窝</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Hui3c 窝</div>
+        <div class="logo-desc">
+            
+            要偷偷努力，希望自己也能成为别人的梦想
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">计算机网络-IP协议</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                                <span class="chip bg-color">计算机网络</span>
+                            </a>
+                        
+                            <a href="/tags/IP/">
+                                <span class="chip bg-color">IP</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                计算机网络
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-03-21
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-03-21
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.5k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="IP报文"><a href="#IP报文" class="headerlink" title="IP报文"></a>IP报文</h2><blockquote>
+<p>MTU ：</p>
+<p>通信术语 最大传输单元（Maximum Transmission Unit，MTU）是指一种通信协议的某一层上面所能通过的最大数据包大小（以字节为单位）。最大传输单元这个参数通常与通信接口有关（网络接口卡、串口等）。</p>
+</blockquote>
+<div>
+<table style="border-collapse: collapse; min-width: 100%;"><colgroup><col style="width: 284px;"><col style="width: 701px;"></colgroup><tbody><tr><td style="border: 1px solid rgb(187, 187, 187); width: 284px; padding: 8px;"><div>网络名称</div></td><td style="border: 1px solid rgb(187, 187, 187); width: 701px; padding: 8px;"><div>MTU 值</div></td></tr><tr><td style="border: 1px solid rgb(187, 187, 187); width: 284px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">Internet&nbsp;IPv4 path MTU</span></div></td><td style="border: 1px solid rgb(187, 187, 187); width: 701px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">At least 68 max of 64&nbsp;KiB</span></div></td></tr><tr><td style="border: 1px solid rgb(187, 187, 187); width: 284px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">Internet&nbsp;IPv6 path MTU</span></div></td><td style="border: 1px solid rgb(187, 187, 187); width: 701px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">At least 1280, max of 64&nbsp;KiB, but up to 4&nbsp;GiB with optional jumbogram</span></div></td></tr><tr><td style="border: 1px solid rgb(187, 187, 187); width: 284px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">Ethernet v2</span></div></td><td style="border: 1px solid rgb(187, 187, 187); width: 701px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">1500</span></div></td></tr><tr><td style="border: 1px solid rgb(187, 187, 187); width: 284px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">Ethernet with&nbsp;LLCand&nbsp;SNAP</span></div></td><td style="border: 1px solid rgb(187, 187, 187); width: 701px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">1492</span></div></td></tr><tr><td style="border: 1px solid rgb(187, 187, 187); width: 284px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">Ethernet&nbsp;jumbo frames</span></div></td><td style="border: 1px solid rgb(187, 187, 187); width: 701px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">1501 – 9216 or more</span></div></td></tr><tr><td style="border: 1px solid rgb(187, 187, 187); width: 284px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">PPPoE v2</span></div></td><td style="border: 1px solid rgb(187, 187, 187); width: 701px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">1492</span></div></td></tr><tr><td style="border: 1px solid rgb(187, 187, 187); width: 284px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">DS-Lite&nbsp;over PPPoE</span></div></td><td style="border: 1px solid rgb(187, 187, 187); width: 701px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">1452</span></div></td></tr><tr><td style="border: 1px solid rgb(187, 187, 187); width: 284px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">PPPoE jumbo frames</span></div></td><td style="border: 1px solid rgb(187, 187, 187); width: 701px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">1493 – 9190 or more</span></div></td></tr><tr><td style="border: 1px solid rgb(187, 187, 187); width: 284px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">IEEE 802.11&nbsp;Wi-Fi (WLAN)</span></div></td><td style="border: 1px solid rgb(187, 187, 187); width: 701px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">2304</span></div></td></tr><tr><td style="border: 1px solid rgb(187, 187, 187); width: 284px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">Token Ring (802.5)</span></div></td><td style="border: 1px solid rgb(187, 187, 187); width: 701px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px;">4464</span></div></td></tr><tr><td style="font-size: 14px; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; border: 1px solid rgb(187, 187, 187); width: 284px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px; font-family: sans-serif; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; text-decoration-color: initial; text-decoration-style: initial;">FDDI</span></div></td><td style="font-size: 14px; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; border: 1px solid rgb(187, 187, 187); width: 701px; padding: 8px;"><div style="font-size: 14px;"><span style="font-size: 14px; font-family: sans-serif; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; text-decoration-color: initial; text-decoration-style: initial;">4352</span></div></td></tr></tbody></table></div>
+
+
+
+<img src="/2021/03/21/network-ip/Image-1616334649019.png" class="" title="常见网络以及MTU大小">
+
+<h2 id="数据分片"><a href="#数据分片" class="headerlink" title="数据分片"></a>数据分片</h2><img src="/2021/03/21/network-ip/image-20210321215739861.png" class="" title="数据分片原理">
+
+
+
+<p>其中数据<strong>A、B</strong>属于数据分片，<u>原始数据</u>被拆分成两个正交子集分布在两个节点上。而<u>数据集C</u>属于数据冗余，同一份完整的数据在两个节点都有存储。当然，在实际的分布式系统中，<u>数据分片和数据冗余</u>一般都是<code>共存</code>的。</p>
+<p>互联网协议允许IP分片，这样的话，<strong>当数据包比链路最大传输单元大时</strong>，就可以被分解为很多的足够小片段，以便能够在其上进行传输</p>
+<img src="/2021/03/21/network-ip/image-20210321215755639.png" class="" title="数据分片计算">
+
+
+
+<blockquote>
+<p>ip包头 头部大小：</p>
+<p>4bit + 4bit + 8bit + 16bit +16bit + 3bit + 13bit + 8bit +8bit + 16bit + 32bit(S IP) + 32bit(D IP) </p>
+<p>= 160bit = 20byte </p>
+</blockquote>
+<h2 id="IP数据报"><a href="#IP数据报" class="headerlink" title="IP数据报"></a>IP数据报</h2><img src="/2021/03/21/network-ip/image-20210321215826167.png" class="" title="ip 数据包结构">
+
+<img src="/2021/03/21/network-ip/image-20210321215847542.png" class="" title="wiki 对应">
+
+
+
+
+
+<div>
+    <table style="border-collapse: collapse; min-width: 100%;"><colgroup><col style="width: 130px;"><col style="width: 100px;"><col style="width: 329px;"><col style="width: 569px;"></colgroup><tbody><tr><td style="background-color: rgb(253, 123, 57); border: 1px solid rgb(246, 84, 3); width: 130px; padding: 8px;"><div style="text-align: center;"><span style="color: rgb(255, 255, 255);">参数</span></div></td><td style="background-color: rgb(253, 123, 57); border: 1px solid rgb(246, 84, 3); width: 100px; padding: 8px;"><div style="text-align: center;"><span style="color: rgb(255, 255, 255);">翻译</span></div></td><td style="background-color: rgb(253, 123, 57); border: 1px solid rgb(246, 84, 3); width: 329px; padding: 8px;"><div style="text-align: center;"><span style="color: rgb(255, 255, 255);">注释</span></div></td><td style="background-color: rgb(253, 123, 57); border: 1px solid rgb(246, 84, 3); width: 569px; padding: 8px;"><div>其他备注</div></td></tr><tr><td style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 130px; padding: 8px;"><div>VER</div></td><td style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 100px; padding: 8px;"><div>版本</div></td><td style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 329px; padding: 8px;"><div>区分不同ip版本&nbsp; 例如ipv4 ipv6</div></td><td style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 569px; padding: 8px;"><div><br></div></td></tr><tr><td style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 130px; padding: 8px;">HLEN</td><td style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 100px; padding: 8px;"><div>头部长度</div></td><td style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 329px; padding: 8px;"><div>长度为不确定值，所以需要标识头部长度 用4bit表示，范围5-15&nbsp; （20-40byte）</div></td><td style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 569px; padding: 8px;"><div><br></div></td></tr><tr><td style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 130px; padding: 8px;"><div>Service Type</div></td><td style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 100px; padding: 8px;"><div>协议类型 TOS</div></td><td style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 329px; padding: 8px;"><div>用来指定特殊的报文处理方式</div></td><td style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 569px; padding: 8px;"><div>附表给予参数</div></td></tr><tr><td style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 130px; padding: 8px;">Toal Lenght</td><td style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 100px; padding: 8px;"><div>总长度</div></td><td style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 329px; padding: 8px;"><div>整个ip分组的长度 取值&nbsp;0-65535byte&nbsp; 链路只允许1500byte，需要MTU 分片</div></td><td style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 569px; padding: 8px;"><div><br></div></td></tr><tr><td style="vertical-align: middle; width: 130px; padding: 8px; border: 1px solid;"><div>Identification</div></td><td style="vertical-align: middle; width: 100px; padding: 8px; border: 1px solid;"><div>标识符</div></td><td style="vertical-align: middle; width: 329px; padding: 8px; border: 1px solid;"><div>通常与标记字段和分片偏移字段一起用于IP报文的分片。</div></td><td style="vertical-align: middle; width: 569px; padding: 8px; border: 1px solid;"><div>当原始报文大小超过该MTU 就会对原始数据进行分片。每个分派你报文不超过MTU 。这个字段的作用将在同一原始文件被分片的报文打赏相同的标记</div></td></tr><tr><td style="vertical-align: middle; background-color: rgb(252, 83, 86); border: 1px solid rgb(251, 17, 21); width: 130px; padding: 8px;"><div><span style="color: rgb(255, 255, 255);">Flags</span></div></td><td style="vertical-align: middle; background-color: rgb(252, 83, 86); border: 1px solid rgb(251, 17, 21); width: 100px; padding: 8px;"><div><span style="color: rgb(255, 255, 255);">标记</span></div></td><td style="background-color: rgb(252, 83, 86); border: 1px solid rgb(251, 17, 21); width: 329px; padding: 8px;"><div><span style="color: rgb(255, 255, 255);">见下章节 3BIT （空 D M ）</span></div></td><td style="background-color: rgb(252, 83, 86); border: 1px solid rgb(251, 17, 21); width: 569px; padding: 8px;"><div><br></div></td></tr><tr><td style="vertical-align: middle; width: 130px; padding: 8px; border: 1px solid;"><div>Fragmentation offset</div></td><td style="vertical-align: middle; width: 100px; padding: 8px; border: 1px solid;"><div>分片偏移</div></td><td style="vertical-align: middle; width: 329px; padding: 8px; border: 1px solid;"><div>标识某个分片在分组中的位置</div></td><td style="vertical-align: middle; width: 569px; padding: 8px; border: 1px solid;"><div>以太网最大的帧长为1518， IP报文1500byte + 帧头18byte = 1518byte</div></td></tr><tr><td style="width: 130px; padding: 8px; border: 1px solid;"><div>Time to live</div></td><td style="width: 100px; padding: 8px; border: 1px solid;"><div>生存时间TTL</div></td><td style="width: 329px; padding: 8px; border: 1px solid;"><div>跳数的大小，即数据包可以跳多少次</div></td><td style="width: 569px; padding: 8px; border: 1px solid;"><div>TTL并不是一个真正时间值，因经过设备的时间不可能一致。一般的：</div><div>linux为 TTL=255，win98为TTL=128，win7为TTL=64</div></td></tr><tr><td style="width: 130px; padding: 8px; border: 1px solid;"><div>Protocol</div></td><td style="width: 100px; padding: 8px; border: 1px solid;"><div>协议</div></td><td style="width: 329px; padding: 8px; border: 1px solid;"><div>标识出传输层的地址或协议号</div></td><td style="width: 569px; padding: 8px; border: 1px solid;"><div>一般视作网络层，因为都需要用IP报头封装。所以1 代表交给ICMP，6代表交给TCP</div></td></tr><tr><td style="vertical-align: middle; width: 130px; padding: 8px; border: 1px solid;"><div>Header checksum</div></td><td style="vertical-align: middle; width: 100px; padding: 8px; border: 1px solid;"><div>校验ip报头差错</div></td><td style="vertical-align: middle; width: 329px; padding: 8px; border: 1px solid;"><div>两种模式：1. 16bits&nbsp; 差错检测&nbsp; 2. 无序重复校验数据部分</div></td><td style="vertical-align: middle; width: 569px; padding: 8px; border: 1px solid;"><div>计算方法：</div><div><br></div><div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="-webkit-font-smoothing: antialiased; max-width: 100%; font-size: 16px; word-break: break-all; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: 宋体; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">首先把检验和字段置为</span><span style="font-size: 16px; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: -apple-system, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;Microsoft Yahei&quot;, sans-serif; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">0</span><span style="-webkit-font-smoothing: antialiased; max-width: 100%; font-size: 16px; word-break: break-all; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: 宋体; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">。然后，对首部中每个</span><span style="font-size: 16px; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: -apple-system, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;Microsoft Yahei&quot;, sans-serif; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">16&nbsp;bit</span><span style="-webkit-font-smoothing: antialiased; max-width: 100%; font-size: 16px; word-break: break-all; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: 宋体; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">（切割成多个</span><span style="font-size: 16px; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: -apple-system, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;Microsoft Yahei&quot;, sans-serif; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">16bit</span><span style="-webkit-font-smoothing: antialiased; max-width: 100%; font-size: 16px; word-break: break-all; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: 宋体; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">组）进行二进制反码求和（整个首部看成是由一串</span><span style="font-size: 16px; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: -apple-system, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;Microsoft Yahei&quot;, sans-serif; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">16&nbsp;bit</span><span style="-webkit-font-smoothing: antialiased; max-width: 100%; font-size: 16px; word-break: break-all; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: 宋体; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">的字组成），结果存在检验和字段中。当收到一份</span><span style="font-size: 16px; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: -apple-system, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;Microsoft Yahei&quot;, sans-serif; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">IP</span><span style="-webkit-font-smoothing: antialiased; max-width: 100%; font-size: 16px; word-break: break-all; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: 宋体; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">数据报后，同样对首部中每个</span><span style="font-size: 16px; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: -apple-system, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;Microsoft Yahei&quot;, sans-serif; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">16&nbsp;bit</span><span style="-webkit-font-smoothing: antialiased; max-width: 100%; font-size: 16px; word-break: break-all; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: 宋体; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">进行二进制反码的求和。由于接收方在计算过程中包含了发送方存在首部中的检验和，因此，如果首部在传输过程中没有发生任何差错，那么接收方计算的结果应该为全</span><span style="font-size: 16px; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: -apple-system, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;Microsoft Yahei&quot;, sans-serif; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">1</span><span style="-webkit-font-smoothing: antialiased; max-width: 100%; font-size: 16px; word-break: break-all; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: 宋体; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">。如果结果不是全</span><span style="font-size: 16px; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: -apple-system, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;Microsoft Yahei&quot;, sans-serif; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">1</span><span style="-webkit-font-smoothing: antialiased; max-width: 100%; font-size: 16px; word-break: break-all; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: 宋体; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">（即检验和错误），那么</span><span style="font-size: 16px; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: -apple-system, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;Microsoft Yahei&quot;, sans-serif; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">IP</span><span style="-webkit-font-smoothing: antialiased; max-width: 100%; font-size: 16px; word-break: break-all; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: 宋体; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">就丢弃收到的数据报。但是不生成差错报文，由上层去发现丢失的数据报并进行重传。</span><span style="font-size: 16px; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: -apple-system, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;Microsoft Yahei&quot;, sans-serif; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">&nbsp;</span><span style="-webkit-font-smoothing: antialiased; max-width: 100%; font-size: 16px; word-break: break-all; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: 宋体; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">报头：</span><span style="font-size: 16px; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: -apple-system, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;Microsoft Yahei&quot;, sans-serif; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">1011011101111011&nbsp;=&nbsp;16bit&nbsp;</span><span style="-webkit-font-smoothing: antialiased; max-width: 100%; font-size: 16px; word-break: break-all; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: 宋体; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">反码：</span><span style="font-size: 16px; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: -apple-system, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;Microsoft Yahei&quot;, sans-serif; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">0100100010000100&nbsp;</span><span style="-webkit-font-smoothing: antialiased; max-width: 100%; font-size: 16px; word-break: break-all; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: 宋体; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">求和：</span><span style="font-size: 16px; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 250, 165); color: rgb(61, 70, 77); font-family: -apple-system, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;Microsoft Yahei&quot;, sans-serif; font-variant-caps: normal; font-variant-ligatures: normal;-evernote-highlight:true;">1111111111111111&nbsp;</span></span></div></td></tr><tr><td style="width: 130px; padding: 8px; border: 1px solid;"><div>source ip address</div><div><br></div></td><td style="width: 100px; padding: 8px; border: 1px solid;"><div>源IP地址</div></td><td style="width: 329px; padding: 8px; border: 1px solid;"><div><br></div></td><td style="width: 569px; padding: 8px; border: 1px solid;"><div><br></div></td></tr><tr><td style="width: 130px; padding: 8px; border: 1px solid;"><div>Destination ip address</div></td><td style="width: 100px; padding: 8px; border: 1px solid;"><div>目的IP地址</div></td><td style="width: 329px; padding: 8px; border: 1px solid;"><div><br></div></td><td style="width: 569px; padding: 8px; border: 1px solid;"><div><br></div></td></tr><tr><td style="width: 130px; padding: 8px; border: 1px solid;"><div>Option</div></td><td style="width: 100px; padding: 8px; border: 1px solid;"><div>可选字段</div></td><td style="width: 329px; padding: 8px; border: 1px solid;"><div>用于控制、转发要求、测试等</div></td><td style="width: 569px; padding: 8px; border: 1px solid;"><div><span style="color: rgb(227, 0, 0);">可选字段 0-40 byte，不是ip分组的必须部分，但其处理是ip软件的必须部分</span></div></td></tr></tbody></table>
+</div>
+
+<p>附表：</p>
+<h2 id="附：常见协议类型以及协议号对应表"><a href="#附：常见协议类型以及协议号对应表" class="headerlink" title="附：常见协议类型以及协议号对应表"></a>附：常见协议类型以及协议号对应表</h2><div>
+    <table style="border-collapse: collapse; min-width: 100%;"><colgroup><col style="width: 130px;"><col style="width: 130px;"></colgroup><tbody><tr><td style="vertical-align: middle; background-color: rgb(253, 123, 57); border: 1px solid rgb(246, 84, 3); width: 130px; padding: 8px;"><div><span style="color: rgb(255, 255, 255);">协议号</span></div></td><td style="vertical-align: middle; background-color: rgb(253, 123, 57); border: 1px solid rgb(246, 84, 3); width: 130px; padding: 8px;"><div><span style="color: rgb(255, 255, 255);">协议类型</span></div></td></tr><tr><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div>1</div></td><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div>ICMP</div></td></tr><tr><td style="width: 130px; padding: 8px; border: 1px solid;"><div>2</div></td><td style="width: 130px; padding: 8px; border: 1px solid;"><div>IGMP</div></td></tr><tr><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div>4</div></td><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div>IP</div></td></tr><tr><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div>6</div></td><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div>TCP</div></td></tr><tr><td style="width: 130px; padding: 8px; border: 1px solid;"><div>8</div></td><td style="width: 130px; padding: 8px; border: 1px solid;"><div>EGP</div></td></tr><tr><td style="background-color: rgb(255, 230, 151); border: 1px solid rgb(255, 211, 70); width: 130px; padding: 8px;"><div>17</div></td><td style="background-color: rgb(255, 230, 151); border: 1px solid rgb(255, 211, 70); width: 130px; padding: 8px;"><div>UDP</div></td></tr><tr><td style="background-color: rgb(255, 230, 151); border: 1px solid rgb(255, 211, 70); width: 130px; padding: 8px;"><div>41</div></td><td style="background-color: rgb(255, 230, 151); border: 1px solid rgb(255, 211, 70); width: 130px; padding: 8px;"><div>IPV6</div></td></tr></tbody></table>
+</div>
+
+<img src="/2021/03/21/network-ip/image-20210321220142140.png" class="" title="以太网帧结构">
+
+<h2 id="服务类包TOS"><a href="#服务类包TOS" class="headerlink" title="服务类包TOS"></a>服务类包TOS</h2><img src="/2021/03/21/network-ip/image-20210321220203444.png" class="" title="TOS包">
+
+<h3 id="PPP包对应优先权："><a href="#PPP包对应优先权：" class="headerlink" title="PPP包对应优先权："></a>PPP包对应优先权：</h3><p><strong>权越大 优先级越高</strong></p>
+<div>
+    <table style="border-collapse: collapse; min-width: 100%;"><colgroup><col style="width: 130px;"><col style="width: 130px;"><col style="width: 230px;"></colgroup><tbody><tr><td style="background-color: rgb(0, 168, 45); border: 1px solid rgb(0, 134, 36); width: 130px; padding: 8px;"><div><span style="color: rgb(255, 255, 255);">序列</span></div></td><td style="background-color: rgb(0, 168, 45); border: 1px solid rgb(0, 134, 36); width: 130px; padding: 8px;"><div><span style="color: rgb(255, 255, 255);">协议优先级</span></div></td><td style="background-color: rgb(0, 168, 45); border: 1px solid rgb(0, 134, 36); width: 230px; padding: 8px;"><div><span style="color: rgb(255, 255, 255);">翻译</span></div></td></tr><tr><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div><span style="font-size: 10pt;">000</span></div></td><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><span style="font-size: 10pt;">routine</span></td><td style="width: 230px; padding: 8px; border: 1px solid;"><div>普通</div></td></tr><tr><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div><span style="font-size: 10pt;">001</span></div></td><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div><span style="font-size: 10pt;">priority</span></div></td><td style="width: 230px; padding: 8px; border: 1px solid;"><div>优先</div></td></tr><tr><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div><span style="font-size: 10pt;">010</span></div></td><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div><span style="font-size: 10pt;">immediate</span></div></td><td style="width: 230px; padding: 8px; border: 1px solid;"><div>立即</div></td></tr><tr><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div><span style="font-size: 10pt;">011</span></div></td><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div><span style="font-size: 10pt;">flash</span></div></td><td style="width: 230px; padding: 8px; border: 1px solid;"><div><br></div></td></tr><tr><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div><span style="font-size: 10pt;">100</span></div></td><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div><span style="font-size: 10pt;">flash override</span></div></td><td style="width: 230px; padding: 8px; border: 1px solid;"><div><br></div></td></tr><tr><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div><span style="font-size: 10pt;">101</span></div></td><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div><span style="font-size: 10pt;">cri/tic/ecp</span></div></td><td style="width: 230px; padding: 8px; border: 1px solid;"><div><br></div></td></tr><tr><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div><span style="font-size: 10pt;">110</span></div></td><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div><span style="font-size: 10pt;">internetwok control</span></div></td><td style="width: 230px; padding: 8px; border: 1px solid;"><div>网间控制</div></td></tr><tr><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div><span style="font-size: 10pt;">111</span></div></td><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div><span style="font-size: 10pt;">network control</span></div></td><td style="width: 230px; padding: 8px; border: 1px solid;"><div>网络控制</div></td></tr></tbody></table>
+</div>
+
+<h3 id="DTR-表对应关系"><a href="#DTR-表对应关系" class="headerlink" title="DTR 表对应关系"></a>DTR 表对应关系</h3><div>
+<table style="border-collapse: collapse; min-width: 100%;"><colgroup><col style="width: 130px;"><col style="width: 130px;"><col style="width: 309px;"></colgroup><tbody><tr><td style="background-color: rgb(0, 129, 194); border: 1px solid rgb(0, 103, 155); width: 130px; padding: 8px;"><div><span style="font-size: 12pt;"><span style="font-size: 12pt; color: rgb(255, 255, 255);">序列</span></span></div></td><td style="background-color: rgb(0, 129, 194); border: 1px solid rgb(0, 103, 155); width: 130px; padding: 8px;"><div><span style="color: rgb(255, 255, 255);">翻译</span></div></td><td style="background-color: rgb(0, 129, 194); border: 1px solid rgb(0, 103, 155); width: 309px; padding: 8px;"><div><span style="color: rgb(255, 255, 255);">注释</span></div></td></tr><tr><td style="width: 130px; padding: 8px; border: 1px solid;">D</td><td style="width: 130px; padding: 8px; border: 1px solid;"><div>时延</div></td><td style="width: 309px; padding: 8px; border: 1px solid;"><div>0：普通&nbsp; &nbsp; &nbsp; &nbsp; 1：尽量<span style="color: rgb(227, 0, 0);">小</span></div></td></tr><tr><td style="width: 130px; padding: 8px; border: 1px solid;"><div><span style="font-size: 12pt;">T</span></div></td><td style="width: 130px; padding: 8px; border: 1px solid;"><div><span style="font-size: 12pt;">吞吐量</span></div></td><td style="width: 309px; padding: 8px; border: 1px solid;"><div>0：普通&nbsp; &nbsp; &nbsp; &nbsp; 1：尽量<span style="color: rgb(227, 0, 0);">大</span></div></td></tr><tr><td style="width: 130px; padding: 8px; border: 1px solid;"><div><span style="font-size: 12pt;">R</span></div></td><td style="width: 130px; padding: 8px; border: 1px solid;"><div><span style="font-size: 12pt;">可靠性</span></div></td><td style="width: 309px; padding: 8px; border: 1px solid;"><div>0：普通&nbsp; &nbsp; &nbsp; &nbsp; 1：尽量<span style="color: rgb(227, 0, 0);">大</span></div></td></tr><tr><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div><span style="font-size: 12pt;">M</span></div></td><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 130px; padding: 8px;"><div><span style="font-size: 12pt;">传输成本</span></div></td><td style="background-color: rgb(205, 237, 216); border: 1px solid rgb(140, 214, 165); width: 309px; padding: 8px;"><div>0：普通&nbsp; &nbsp; &nbsp; &nbsp; 1：尽量<span style="color: rgb(255, 0, 0);">小</span></div></td></tr></tbody></table>
+</div>
+
+<p>目前在Internet中使用的TCP/IP协议大多数情况下网络并未对TOS进行处理，但在实际编程时，有专门的函数来设置该字段的各域。一些重要的网际应用协议中都设置了建议使用的<strong>TOS</strong>值：</p>
+<img src="/2021/03/21/network-ip/image-20210321220807148.png" class="" title="TOS值">
+
+<h4 id="FLAGS-位标记"><a href="#FLAGS-位标记" class="headerlink" title="FLAGS 位标记"></a>FLAGS 位标记</h4><img src="/2021/03/21/network-ip/Image%5B8%5D-1616335843464.png" class="" title="标志位">
+
+<div>
+    <table style="border-collapse: collapse; min-width: 100%;"><colgroup><col style="width: 130px;"><col style="width: 130px;"><col style="width: 704px;"></colgroup><tbody><tr><td style="background-color: rgb(255, 230, 151); border: 1px solid rgb(255, 211, 70); width: 130px; padding: 8px;"><div>标识</div></td><td style="background-color: rgb(255, 230, 151); border: 1px solid rgb(255, 211, 70); width: 130px; padding: 8px;"><div>翻译</div></td><td style="background-color: rgb(255, 230, 151); border: 1px solid rgb(255, 211, 70); width: 704px; padding: 8px;"><div>注释</div></td></tr><tr><td style="width: 130px; padding: 8px; border: 1px solid;"><div>R</div></td><td style="width: 130px; padding: 8px; border: 1px solid;"><div><br></div></td><td style="width: 704px; padding: 8px; border: 1px solid;"><div>未被使用</div></td></tr><tr><td style="width: 130px; padding: 8px; border: 1px solid;">DF</td><td style="width: 130px; padding: 8px; border: 1px solid;"><div>不要分片&nbsp;</div></td><td style="width: 704px; padding: 8px; border: 1px solid;"><div>当DF 为1时，路由器不能对数据包进行分片</div></td></tr><tr><td style="width: 130px; padding: 8px; border: 1px solid;">MF</td><td style="width: 130px; padding: 8px; border: 1px solid;"><div>多分片</div></td><td style="width: 704px; padding: 8px; border: 1px solid;"><div><span style="font-weight: bold;">路由器分片时，最后一个分片的MF 位为0，其他所有分片的MF 设为1.这样接收者就能知道是否接受完</span></div></td></tr></tbody></table>
+</div>
+
+<p><strong>目标端主机重组数据报的原理是</strong>：</p>
+<p>(1)—根据“标识”字段可以确定收到的分片属于原来哪个IP数据报；</p>
+<p>(2)—根据“标志”字段的“片未完MF”子字段可以确定分片是不是最后一个分片；</p>
+<p>(3)—根据“<strong>偏移量</strong>”字段可以确定分片在原数据报中的位置。</p>
+<h4 id="偏移量计算"><a href="#偏移量计算" class="headerlink" title="偏移量计算"></a><strong>偏移量计算</strong></h4><img src="/2021/03/21/network-ip/image-20210321215755639.png" class="" title="偏移量计算">
+
+<p>片偏移就是某片在原分组的相对位置，以8个字节为偏移单位。这就是说，每个分片的长度一定是8字节（64位）的整数倍</p>
+<p>⚠：每次传输最大只能传<strong>1400字节</strong>，缺省情况下按最大传输量传输</p>
+<img src="/2021/03/21/network-ip/Image%5B11%5D.png" class="" title="分段算法">
+
+<p>根据图所示本数据包分片3次。数据包总长度为1500B  <strong>600B+600B+300B = 1500B</strong></p>
+<p>第一次分片 时片移量为0</p>
+<p>第二次为600/8 = 75   </p>
+<p>第三次为 (600+600) / 8 = 150</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Hui3c</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://hui3c.club/2021/03/21/network-ip/">https://hui3c.club/2021/03/21/network-ip/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by-nd/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY-ND 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://hui3c.club" target="_blank">Hui3c</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                                    <span class="chip bg-color">计算机网络</span>
+                                </a>
+                            
+                                <a href="/tags/IP/">
+                                    <span class="chip bg-color">IP</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/03/21/network-ip/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="计算机网络-IP协议">
+                        
+                        <span class="card-title">计算机网络-IP协议</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            【详细】分析ip协议中的内容，以及介绍分段算法。超级详细的附表文档
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
+                    </a>
+                    
+                    <a href="/tags/IP/">
+                        <span class="chip bg-color">IP</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/03/18/java-mybatis/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Java-Mybatis">
+                        
+                        <span class="card-title">Java-Mybatis</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            (持续更新中)Mybatis学习笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Mybatis/">
+                        <span class="chip bg-color">Mybatis</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2021</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">Hui3c</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">34.5k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Hui3c" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:hui3c@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
