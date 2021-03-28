@@ -397,7 +397,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-18
+                    2021-03-28
                 </div>
                 
 
@@ -676,7 +676,8 @@
         proxy<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-3、动态代理（反射）"><a href="#2-3、动态代理（反射）" class="headerlink" title="2.3、动态代理（反射）"></a>2.3、动态代理（反射）</h3><ul>
+<h3 id="2-3、动态代理（反射）"><a href="#2-3、动态代理（反射）" class="headerlink" title="2.3、动态代理（反射）"></a>2.3、动态代理（反射）</h3><p>如果不知道反射是啥，可以查看 <a href="/2021/03/07/java-annotationAreflect/">Java-注解与反射</a></p>
+<ul>
 <li>动态代理于静态<code>代理角色</code>一样</li>
 <li>动态代理类是<strong>动态生成</strong>的</li>
 <li>分类：基于<code>interface</code>的动态代理，基于<code>class</code>的动态代理<ul>
@@ -846,6 +847,9 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>有两切面：</p>
+<ul>
+<li>他们各自实现<code>MethodBeforeAdvice</code>和<code>AfterReturningAdvice</code>方法</li>
+</ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hui<span class="token punctuation">.</span>log</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>aop<span class="token punctuation">.</span></span><span class="token class-name">MethodBeforeAdvice</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span></span><span class="token class-name">Method</span><span class="token punctuation">;</span>
@@ -995,7 +999,8 @@
 </tbody></table>
 <p>新增一个<code>AnnotationPoint</code>类：（测试类和被代理类不动）</p>
 <ul>
-<li>如果使用环绕的话，截断后需要使用<code>proceed()</code> 执行方法</li>
+<li>如果使用环绕的话，截断后需要使用<code>proceed()</code> 用于执行方法</li>
+<li>类：<code>com.hui.diy.AnnotationPoint</code></li>
 </ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 标注此类为一个切面</span>
 <span class="token annotation punctuation">@Aspect</span>
@@ -1022,6 +1027,8 @@
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"环绕后！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 <p>托管对象</p>
 <pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
@@ -1172,7 +1179,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            【概要】学习Java基础的点点滴滴。
                         
                     </div>
                     <div class="publish-info">
@@ -1225,7 +1232,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文适合从有其他语言基础，首次使用Java中的Spring的入门教学。开始包含全代码以及逻辑，讲解到Bean的部分注解器注入
+                            【概要】本文适合从有其他语言基础，首次使用Java中的Spring的入门教学。开始包含全代码以及逻辑，讲解到Bean的部分注解器注入
                         
                     </div>
                     <div class="publish-info">
@@ -1401,7 +1408,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">39.4k</span>&nbsp;字
+                class="white-color">39.5k</span>&nbsp;字
             
             
             
