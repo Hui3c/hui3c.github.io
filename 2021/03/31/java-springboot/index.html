@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="测试文章, Hui3c 窝">
+    <meta name="keywords" content="java-springboot, Hui3c 窝">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>测试文章 | Hui3c 窝</title>
+    <title>java-springboot | Hui3c 窝</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -240,12 +240,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">测试文章</h1>
+                    <h1 class="description center-align post-title">java-springboot</h1>
                 </div>
             </div>
         </div>
@@ -359,9 +359,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                                <span class="chip bg-color">微服务</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -380,14 +384,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-31
+                    2021-04-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    23
+                    1.2k
                 </div>
                 
 
@@ -407,16 +411,272 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
-<h1>20云计算2班 抗美援朝 11月团日活动b</h1>
-<video controls="controls" autoplay="autoplay" width="100%" height="90%">
-  <source src="https://1234-1256934472.cos.ap-guangzhou.myqcloud.com/%E8%B7%B3%E8%88%9E.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+                <h2 id="微服务阶段"><a href="#微服务阶段" class="headerlink" title="微服务阶段"></a>微服务阶段</h2><p>javase:OOP</p>
+<p>mysql：持久化</p>
+<p>html+ css：前端，视图层</p>
+<p>javaweb：独立开发mvc三层架构：原始</p>
+<p>ssm：框架，简化开发流程，配置开始较为复杂</p>
+<p>war：tomcat运行</p>
+<p>spring简化：spring-boot（内嵌<code>tomcat</code>）：微服务</p>
+<p>服务：微服务</p>
+<img src="/2021/03/31/java-springboot/image-20210401084432409.png" class="" title="学习简章">
+
+<h2 id="Hello-Spring-Boot"><a href="#Hello-Spring-Boot" class="headerlink" title="Hello Spring-Boot"></a>Hello Spring-Boot</h2><h4 id="什么是Spring-Boot"><a href="#什么是Spring-Boot" class="headerlink" title="什么是Spring-Boot"></a>什么是Spring-Boot</h4><ul>
+<li><code>Spring-boot</code>是<code>javaweb</code>的开发框架</li>
+<li><strong>约定大于配置</strong></li>
+<li>集成了大量第三方配置：<code>redis</code>、<code>mysql</code>、<code>RabbitMQ</code></li>
+</ul>
+<h3 id="它能干嘛"><a href="#它能干嘛" class="headerlink" title="它能干嘛"></a>它能干嘛</h3><ul>
+<li>为所有Sping 开发者更快入门</li>
+<li>提供各种默认配置简化项目</li>
+<li>内嵌容器简化Web</li>
+<li>没有冗余代码生成和XML配置要求</li>
+</ul>
+<h4 id="微服务架构"><a href="#微服务架构" class="headerlink" title="微服务架构"></a>微服务架构</h4><ul>
+<li>微服务 <code>Resful风格</code> 是一种风格<ul>
+<li>把一个个服务分成多个服务（<code>业务</code>）</li>
+</ul>
+</li>
+<li><code>SpringMVC</code>：来配置，<code>Controller</code>：提供接口</li>
+</ul>
+<h4 id="架构的一种方式"><a href="#架构的一种方式" class="headerlink" title="架构的一种方式"></a>架构的一种方式</h4><ol>
+<li>用户在<code>controller</code>下单：</li>
+<li>通过<code>消息队列</code> <strong>异步</strong>在<strong>不同的服务器</strong>上完成以下步骤<ul>
+<li>仓库动接、资金冻结、验证、仓库数量减少、仓库解冻、资金冻结</li>
+</ul>
+</li>
+<li>每种服务可以互相组合：<strong>高内聚，低耦合</strong></li>
+</ol>
+<p>各个服务之间<code>低耦合</code></p>
+<h3 id="引入Spring-Boot"><a href="#引入Spring-Boot" class="headerlink" title="引入Spring-Boot"></a>引入Spring-Boot</h3><p>方法一：</p>
+<blockquote>
+<p>spring-boot 开始页面：<a target="_blank" rel="noopener" href="https://start.spring.io/">https://start.spring.io/</a></p>
+</blockquote>
+<img src="/2021/03/31/java-springboot/image-20210401143241332.png" class="" title="在构建工具选择版本，然后选择一个web依赖">
+
+<ol start="3">
+<li>选择下载</li>
+<li>接着在idea里面选择<code>导入项目</code></li>
+</ol>
+<p>方法二：使用idea创建</p>
+<img src="/2021/03/31/java-springboot/image-20210401143835110.png" class="" title="选择Spring initializr">
+
+<img src="/2021/03/31/java-springboot/image-20210401144943207.png" class="" title="选好版本以及组">
+
+<img src="/2021/03/31/java-springboot/image-20210401144001728.png" class="" title="选择web组件">
+
+<h4 id="Spring-Boot-目录结构"><a href="#Spring-Boot-目录结构" class="headerlink" title="Spring-Boot 目录结构"></a>Spring-Boot 目录结构</h4><img src="/2021/03/31/java-springboot/image-20210401145237816.png" class="" title="目录结构">
+
+<h3 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world!"></a>Hello world!</h3><ul>
+<li>创建<code>com.hui.demo.controller.HelloController</code> 类</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@RestController</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/hello"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"hello world!"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>通过浏览器访问<code>localhost:8080/hello</code> 即可</li>
+</ul>
+<p>你也可以这样写：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/hello"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/hello"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@ResponseBody</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"hello world!"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>通过浏览器访问<code>localhost:8080/hello/hello</code> 即可</li>
+</ul>
+<p>附上常用的几个注解：</p>
+<p><code>@Controller</code>：处理http请求</p>
+<p><code>@RestController</code>：Spring4之后新加入的注解，原来返回json需要@ResponseBody和@Controller配合</p>
+<p><code>@RequestMapping </code>：配置url映射</p>
+<p><code>@ResponseBody</code>：将java对象转为json格式的数据</p>
+<h4 id="更改banner和端口号"><a href="#更改banner和端口号" class="headerlink" title="更改banner和端口号"></a>更改banner和端口号</h4><ul>
+<li>在<code>resources</code>中创建<code>banner.txt</code><ul>
+<li>然后将要启动的样子放入<code>banner.txt</code>中</li>
+</ul>
+</li>
+<li>更改端口号在<code>application.properties</code> <ul>
+<li>加入一行：<code>server.port=8081</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="原理初探"><a href="#原理初探" class="headerlink" title="原理初探"></a>原理初探</h2><p><code>pom.xml</code></p>
+<ul>
+<li>spring-boot-dependencies：核心依赖在夫工程中</li>
+<li>写入SpingBoot依赖不需要版本：因为有这些版本仓库</li>
+</ul>
+<h4 id="启动器"><a href="#启动器" class="headerlink" title="启动器"></a>启动器</h4><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">&gt;</span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>需要使用寿命功能只需要找到对应的启动器就可以了</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-starter">官网上</a>写了有多少个启动器</p>
+<h4 id="主程序"><a href="#主程序" class="headerlink" title="主程序"></a>主程序</h4><p>这里要分析下源码</p>
+<p>。。。等我学完再把这里补上吧</p>
+<h2 id="外置配置"><a href="#外置配置" class="headerlink" title="外置配置"></a>外置配置</h2><p>Spring-boot使用全局配置文件，文件名固定</p>
+<ul>
+<li><code>application.properties</code><ul>
+<li>key=value</li>
+</ul>
+</li>
+<li><code>application.yml</code><ul>
+<li><code>key: value</code>  (注意有空格)</li>
+</ul>
+</li>
+</ul>
+<p>SpringBoot 推荐使用yml作为外置配置文件</p>
+<h3 id="yml-基础语法"><a href="#yml-基础语法" class="headerlink" title="yml 基础语法"></a>yml 基础语法</h3><ul>
+<li>yml可以有如下类型</li>
+</ul>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">name: hui3c
+
+# 对象
+student:
+  name: huist
+  age: 3
+
+# 对象：也可以写成行内的方法
+student2: {name: huist,age: 3}
+
+# 数组
+pets:
+  - cat
+  - dog
+  - pig
+
+# 数组：行内写法
+pets2: [cat,dog,pig]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="实体类测试"><a href="#实体类测试" class="headerlink" title="实体类测试"></a>实体类测试</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// ----------Person.java-----------------</span>
+<span class="token annotation punctuation">@Data</span>
+<span class="token annotation punctuation">@AllArgsConstructor</span>
+<span class="token annotation punctuation">@NoArgsConstructor</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span>  <span class="token class-name">Integer</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Boolean</span> wife<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Date</span> brith<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span><span class="token class-name">Object</span><span class="token punctuation">&gt;</span></span> maps<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Dog</span> dog<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// ---------Dog.java---------</span>
+<span class="token annotation punctuation">@Data</span>
+<span class="token annotation punctuation">@AllArgsConstructor</span>
+<span class="token annotation punctuation">@NoArgsConstructor</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Integer</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Boolean</span> wife<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Date</span> brith<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span><span class="token class-name">Object</span><span class="token punctuation">&gt;</span></span> maps<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Object</span><span class="token punctuation">&gt;</span></span> lists<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Dog</span> dog<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>通过yal赋值</li>
+</ul>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">person:
+  name: hui3c
+  age: 23
+  wife: false
+  birth: 2121/02/02
+  maps: {k1: v1,k2: v2}
+  lists:
+    - code
+    - music
+  dog:
+    name: 小黄
+    age: 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>在实体类中使用<code>@ConfigurationProperties</code>注解来导入对应的</li>
+</ul>
+<img src="/2021/03/31/java-springboot/image-20210402105221846.png" class="" title="出现爆红">
+
+<p><strong>解决方法</strong></p>
+<p>在<code>pom.xml</code>中导入对应依赖</p>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-configuration-processor<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optional</span><span class="token punctuation">&gt;</span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optional</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p>注解将配置绑定为person对象</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token annotation punctuation">@ConfigurationProperties</span><span class="token punctuation">(</span>prefix <span class="token operator">=</span> <span class="token string">"person"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="/2021/03/31/java-springboot/image-20210402110438030.png" class="" title="对应关系">
+
+<p>测试类：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">
+<span class="token annotation punctuation">@SpringBootTest</span>
+<span class="token keyword">class</span> <span class="token class-name">DemoApplicationTests</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> <span class="token class-name">Person</span> person<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">void</span> <span class="token function">contextLoads</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p><strong>用于配置文件与实体类属性一一绑定</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 通过此 注解 绑定 properties 配置文件 <span class="token operator">--</span><span class="token operator">&gt;</span>
+<span class="token annotation punctuation">@PropertySource</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"class:hello.properties"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+<h3 id="yml-其他功能"><a href="#yml-其他功能" class="headerlink" title="yml 其他功能"></a>yml 其他功能</h3><p><code>yml占位符</code>：可以指定范围、随机数生成、uuid生成等等.. 这些可以简化很多业务代码</p>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"># 随机数占位符
+${random.value}、${random.int}、${random.long}
+${random.int(10)}、${random.int[1024,65536]}
+
+# 可以使用 : 表示默认值
+  dog:
+  # 如果person.hello没有值就展示hello
+    name: ${person.hello:hello}_dog<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="自动松散绑定"><a href="#自动松散绑定" class="headerlink" title="自动松散绑定"></a>自动松散绑定</h4><p>有一配置<code>last-name</code>：</p>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">last-name: hui3c<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>有在实体类的表现<code>LastName</code>：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">private</span> <span class="token class-name">String</span> <span class="token class-name">LastName</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="JSR303-校验"><a href="#JSR303-校验" class="headerlink" title="JSR303 校验"></a>JSR303 校验</h4><p>在实体类上使用注解<code>@Validated</code>，你可以在某个属性上使用JSR303的注解来进行简单的数据校验</p>
+<ul>
+<li>在使用之前需要导入依赖</li>
+</ul>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-validation<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>例子：检测类型是否符合email</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token annotation punctuation">@Validated</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Email</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> email<span class="token punctuation">;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 
+<h3 id="yml-作用域"><a href="#yml-作用域" class="headerlink" title="yml 作用域"></a>yml 作用域</h3><p>yml 可以在以下这些区域存在</p>
+<p>- </p>
 
                 
             </div>
@@ -443,7 +703,7 @@ Your browser does not support the video tag.
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hui3c.club/2021/03/31/veido/">https://hui3c.club/2021/03/31/veido/</a>
+                    <a href="https://hui3c.club/2021/03/31/java-springboot/">https://hui3c.club/2021/03/31/java-springboot/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -480,7 +740,11 @@ Your browser does not support the video tag.
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                                    <span class="chip bg-color">微服务</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -529,13 +793,13 @@ Your browser does not support the video tag.
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/03/31/veido/">
+                <a href="/2021/03/31/java-springboot/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="测试文章">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="java-springboot">
                         
-                        <span class="card-title">测试文章</span>
+                        <span class="card-title">java-springboot</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -557,6 +821,14 @@ Your browser does not support the video tag.
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                        <span class="chip bg-color">微服务</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -751,7 +1023,7 @@ Your browser does not support the video tag.
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">43.1k</span>&nbsp;字
+                class="white-color">44.3k</span>&nbsp;字
             
             
             
