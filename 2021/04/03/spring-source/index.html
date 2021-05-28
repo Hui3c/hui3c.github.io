@@ -442,7 +442,7 @@
 <p>继续分析可以发现在<code>spring.web</code>包下</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@ConfigurationProperties</span><span class="token punctuation">(</span><span class="token string">"spring.web"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>给<code>yml</code>配置静态文件位置，达到：从指定位置获得静态文件 效果</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">spring.mvc.static<span class="token punctuation">-</span>path<span class="token punctuation">-</span>pattern=/<span class="token important">**</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">spring.mvc.static-path-pattern=/**<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
